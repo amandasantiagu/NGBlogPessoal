@@ -1,0 +1,15 @@
+.row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+.parallax {
+
+    background-image:url('../../assets/gifyuyu.gif');
+
+    min-height: 500px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no;
+}
