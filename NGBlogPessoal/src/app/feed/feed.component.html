@@ -61,7 +61,23 @@
             </div>
             <hr class="mt-5 mb-5">
 
-            <h3 class="text-monospace text-center">Minhau Postagens</h3>
+            <h3 class="text-monospace text-center mb-5">Minhau Postagens</h3>
+            <!-- NGFOR LAço cria um card para cada postagem da lista postagem ou seja, listapostagens e o ARRAY -->
+            <div class="card" *ngFor="let postagem of listaPostagens">
+
+                <div class="card-header">
+                    <h5 class="card-title"> {{ postagem.titulo }} </h5>
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text"> {{ postagem.texto }}</p>
+                    <small class="form-text m-0 text-muted mb-3 text-monospace">
+
+                        Postado em {{ postagem.data | date: 'dd/MM/yyyy'}}
+                        as {{ postagem.data | date: 'HH:mm'}}
+                    </small>
+                </div>
+            </div>
         </div>
     </div>
 </div>

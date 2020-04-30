@@ -1,3 +1,5 @@
+import { Postagem } from './../model/Postagem';
+import { PostagemService } from './../service/postagem.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  constructor() { }
-
+  listaPostagens: Postagem[]
+  /* PROJETAR AS DEPENDENCIAS A SER CONSUMIDAS*/
+  constructor(private PostagemService: PostagemService) { }
+  /* OQ VAI SER CARREGADO NO SITE*/
   ngOnInit(): void {
+    this.findallPostagens()
   }
+
+  findallPostagens() {
+    this.PostagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
+
+  }
+
 
 }
